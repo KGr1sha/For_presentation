@@ -39,5 +39,10 @@ class Student(models.Model):
                + str(self.class_index)
 
 
+class Journal(models.Model):
+    id1 = models.ForeignKey(Student, on_delete=models.PROTECT)
+    id2 = models.ForeignKey(Book, on_delete=models.PROTECT)
+    date_take = models.DateTimeField(auto_now_add=True)
 
-
+    def __str__(self):
+        return str(self.id1) + ' ' + str(self.id2)
