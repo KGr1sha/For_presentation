@@ -18,4 +18,4 @@ class StudentSerializer(ModelSerializer):
 class JournalSerializer(ModelSerializer):
     class Meta:
         model = Journal
-        fields = '__all__'
+        fields = ['book']

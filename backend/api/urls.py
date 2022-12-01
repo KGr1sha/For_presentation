@@ -1,13 +1,9 @@
-from django.urls import path, include
-from .views import BookViewSet, JournalViewSet, get_queryset
-from rest_framework import routers
-
-router = routers.SimpleRouter()
-router.register(r'book', BookViewSet)
-router.register(r'journal', JournalViewSet)
+from django.urls import path
+from .views import *
 
 
 urlpatterns = [
-    path('api/v1/', include(router.urls)),
-    path('class/<int:id>/', get_queryset)
+    path('api/students/<int:class_num>/<int:class_index>/', get_students),
+    path('api/student/<int:student_id>/', get_student_books),
+    path('api/books/<int:num>/', get_books),
 ]
